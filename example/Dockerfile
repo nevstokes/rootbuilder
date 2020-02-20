@@ -1,4 +1,5 @@
-FROM progrium/rootbuilder
-ADD ./config /tmp/buildroot/.config
-RUN make oldconfig
-RUN make --quiet
+FROM nevstokes/rootbuilder
+
+COPY ./config /tmp/buildroot/.config
+
+RUN make oldconfig && make --quiet

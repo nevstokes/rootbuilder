@@ -6,6 +6,7 @@ config:
 	docker rm `docker ps -lq`
 	mv .config config
 
+# use docker buildx
 build:
 	docker build -t rootfs .
 	docker run --rm rootfs cat /tmp/buildroot/output/images/rootfs.tar > rootfs.tar
